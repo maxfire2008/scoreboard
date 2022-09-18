@@ -1,0 +1,2 @@
+# scoreboard
+Flask scoreboard

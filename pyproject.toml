@@ -8,6 +8,7 @@ authors = ["maxfire2008 <22722054+maxfire2008@users.noreply.github.com>"]
 python = "^3.10"
 Flask = "^2.2.2"
 Flask-SocketIO = "^5.3.1"
+eventlet = "^0.33.1"
 
 [tool.poetry.dev-dependencies]
 

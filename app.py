@@ -12,6 +12,10 @@ socketio = flask_socketio.SocketIO(app)
 def view(game):
     return flask.render_template("view.html", game=game)
 
+@app.route("/manage/<game>")
+def manage(game):
+    return flask.render_template("manage.html", game=game)
+
 @socketio.on('join')
 def on_join(data):
     room = data
@@ -26,9 +30,9 @@ def on_leave(data):
 
 @app.route("/update/<game>", methods=['POST'])
 def update(game):
-    flask_socketio.emit(
+    socketio.emit(
         'update',
-        flask.request.data,
+        flask.request.form,
         room=game
     )
     return "OK"
